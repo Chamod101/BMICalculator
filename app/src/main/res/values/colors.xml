@@ -12,5 +12,11 @@
     <color name="CardColor">#393E46</color>
     <color name="ButtonColor">#00ADB5</color>
     <color name="TextColor">#EEEEEE</color>
+    FFE15D
+
+    <color name="Under_weight">#FFE15D</color>
+    <color name="Normal">#F49D1A</color>
+    <color name="Over_weight">#DC3535</color>
+    <color name="Obese">#B01E68</color>
 
 </resources>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +35,30 @@ class MainActivity : AppCompatActivity() {
         val text = findViewById<TextView>(R.id.tvText)
 
         resultCount.text = bmi.toString()
-        text.text = "(Range is between 1.4 - 5)"
+        text.text = "Normal range is from 18.5 to 24.9"
+
+        var resultText = ""
+        var color = 0
+
+        when{
+            bmi<18.50 ->{
+                resultText="Under Weight"
+                color=R.color.Under_weight
+            }
+            bmi in 18.50..24.99 ->{
+                resultText="Healthy"
+                color=R.color.Normal
+            }
+            bmi in 25.00..29.99 ->{
+                resultText="OverWeight"
+                color=R.color.Over_weight
+            }
+            bmi>30 ->{
+                resultText="Obese"
+                color=R.color.Obese
+            }
+        }
+        result.setTextColor(ContextCompat.getColor(this,color))
+        result.text = resultText.toString()
     }
 }
